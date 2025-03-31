@@ -1,4 +1,4 @@
-import { cn } from '@/app/utils/cn';
+import { cn } from '../../utils/cn'
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

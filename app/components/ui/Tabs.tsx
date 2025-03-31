@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { cn } from '@/app/utils/cn';
+import { cn } from '../../utils/cn'
 
 interface TabsProps {
   defaultValue?: string;

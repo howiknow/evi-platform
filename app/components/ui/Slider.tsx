@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { cn } from '@/app/utils/cn';
+import { cn } from '../../utils/cn'
 
 interface SliderProps {
   children: React.ReactNode;
