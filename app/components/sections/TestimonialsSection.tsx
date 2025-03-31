@@ -49,7 +49,12 @@ export default function TestimonialsSection() {
         </motion.div>
         
         <Slider
-          slides={testimonials.map((testimonial, index) => (
+          autoPlay={true}
+          interval={5000}
+          showDots={true}
+          showArrows={true}
+        >
+          {testimonials.map((testimonial, index) => (
             <div key={index} className="px-4">
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 shadow-md h-full">
                 <div className="flex flex-col h-full">
@@ -76,9 +81,7 @@ export default function TestimonialsSection() {
               </div>
             </div>
           ))}
-          autoplay={true}
-          interval={5000}
-        />
+        </Slider>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
