@@ -9,20 +9,20 @@ import { motion } from 'framer-motion';
 // 폼 데이터 타입 정의
 interface ContactFormData {
   name: string;
-  company: string;
   email: string;
-  phone: string;
+  company: string;
   message: string;
+  phone: string;
   agreeToTerms: boolean;
 }
 
 // 유효성 검증 스키마
-const schema = yup.object({
+const schema = yup.object().shape({
   name: yup.string().required('이름을 입력해주세요'),
+  email: yup.string().email('올바른 이메일 주소를 입력해주세요').required('이메일을 입력해주세요'),
   company: yup.string().required('회사명을 입력해주세요'),
-  email: yup.string().email('유효한 이메일 주소를 입력해주세요').required('이메일을 입력해주세요'),
-  phone: yup.string().matches(/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/, '전화번호 형식이 올바르지 않습니다 (예: 010-1234-5678)'),
-  message: yup.string().required('문의 내용을 입력해주세요'),
+  message: yup.string().required('메시지를 입력해주세요'),
+  phone: yup.string().required('전화번호를 입력해주세요'),
   agreeToTerms: yup.boolean().oneOf([true], '개인정보 수집 및 이용에 동의해주세요'),
 });
 
@@ -33,7 +33,7 @@ export const ContactForm: React.FC = () => {
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ContactFormData>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as any,
     defaultValues: {
       name: '',
       company: '',
@@ -45,12 +45,13 @@ export const ContactForm: React.FC = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    // 실제 구현에서는 API 호출 등을 통해 데이터 전송
-    console.log('Form data:', data);
-    
-    // 폼 제출 성공 시 폼 초기화 (1초 지연 후)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    reset();
+    try {
+      // TODO: Implement form submission
+      console.log(data);
+      reset();
+    } catch (error) {
+      console.error('Form submission error:', error);
+    }
   };
 
   return (

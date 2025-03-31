@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { cn } from '@/app/utils/cn';
+import { cn } from '../../utils/cn';
 
 interface ImageWithFallbackProps {
   src: string;
@@ -10,32 +10,27 @@ interface ImageWithFallbackProps {
   width: number;
   height: number;
   className?: string;
-  priority?: boolean;
+  fallbackSrc?: string;
 }
 
-export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
+export function ImageWithFallback({
   src,
   alt,
   width,
   height,
   className,
-  priority = false,
-}) => {
+  fallbackSrc = '/placeholder.jpg',
+}: ImageWithFallbackProps) {
   const [error, setError] = React.useState(false);
 
   return (
-    <div className={cn('relative overflow-hidden', className)}>
-      <Image
-        src={error ? '/placeholder.jpg' : src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="object-cover"
-        onError={() => setError(true)}
-        priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        loading={priority ? 'eager' : 'lazy'}
-      />
-    </div>
+    <Image
+      src={error ? fallbackSrc : src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={cn('object-cover', className)}
+      onError={() => setError(true)}
+    />
   );
-};
+}

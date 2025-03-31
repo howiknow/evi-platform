@@ -48,12 +48,7 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
         
-        <Slider
-          autoPlay={true}
-          interval={5000}
-          showDots={true}
-          showArrows={true}
-        >
+        <Slider autoPlay={true} interval={5000} showDots={true} showArrows={true}>
           {testimonials.map((testimonial, index) => (
             <div key={index} className="px-4">
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 shadow-md h-full">
@@ -101,47 +96,35 @@ export default function TestimonialsSection() {
               <h3 className="text-lg font-bold text-[#0B2C46] dark:text-white">충전 효율성 향상</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              충전 인프라 운영 효율성 30% 향상, 사용자 만족도 증가, 충전소 활용률 최적화
+              충전소 운영 효율성이 30% 이상 향상되어 운영 비용이 크게 절감되었습니다.
             </p>
           </div>
-          
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
-              <div className="bg-[#7E72FF] h-12 w-12 rounded-full flex items-center justify-center text-white mr-3">
+              <div className="bg-[#71B0FF] h-12 w-12 rounded-full flex items-center justify-center text-white mr-3">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M16.28 13.61C15.15 14.74 13.53 15.09 12.1 14.64L9.51001 17.22C9.33001 17.41 8.96001 17.53 8.69001 17.49L7.49001 17.33C7.09001 17.28 6.73001 16.9 6.67001 16.51L6.51001 15.31C6.47001 15.05 6.60001 14.68 6.78001 14.49L9.36001 11.91C8.92001 10.48 9.26001 8.86001 10.39 7.73001C12.01 6.11001 14.65 6.11001 16.28 7.73001C17.9 9.34001 17.9 11.98 16.28 13.61Z" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M10.45 16.28L9.59998 15.42" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M13.3945 10.7H13.4035" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7.75 12L10.58 14.83L16.25 9.17004" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-[#0B2C46] dark:text-white">보안 강화</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              데이터 보안 사고 90% 감소, 안전한 충전 인증 시스템 구축, 개인정보 보호 강화
+              강화된 보안 기능으로 데이터 보호에 대한 우려가 크게 줄었습니다.
             </p>
           </div>
-          
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
-              <div className="bg-gradient-to-r from-[#71B0FF] to-[#7E72FF] h-12 w-12 rounded-full flex items-center justify-center text-white mr-3">
+              <div className="bg-[#71B0FF] h-12 w-12 rounded-full flex items-center justify-center text-white mr-3">
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 2V5" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M16 2V5" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M3.5 9.09H20.5" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15.6947 13.7H15.7037" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15.6947 16.7H15.7037" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M11.9955 13.7H12.0045" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M11.9955 16.7H12.0045" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8.29431 13.7H8.30329" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8.29431 16.7H8.30329" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7.75 12L10.58 14.83L16.25 9.17004" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-[#0B2C46] dark:text-white">운영 비용 절감</h3>
+              <h3 className="text-lg font-bold text-[#0B2C46] dark:text-white">사용자 만족도</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              운영 비용 25% 절감, 유지보수 시간 단축, 에너지 사용 최적화로 비용 효율성 증대
+              사용자 만족도가 크게 향상되어 서비스 이용률이 증가했습니다.
             </p>
           </div>
         </motion.div>
